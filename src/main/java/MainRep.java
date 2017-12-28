@@ -2,10 +2,10 @@ public class MainRep {
 
 
     static String pathToXLSFile =
-//            "//Users//mackret//Downloads/13_выполнено.xlsx";
-          "C://Users//SBT-Kretov-AA//Downloads/11_Выполнено.xlsx";
+            "//Users//mackret//Downloads/12_Выполнено.xlsx";
+//          "C://Users//SBT-Kretov-AA//Downloads/11_Выполнено.xlsx";
 
-    static String[] weekEndDays = {"04","05","11","12","18","19","25","26"};
+    static String[] weekEndDays = {"02","03","09","10","16","17","23","24","30","31"}; //december
 
     static int sheetNumber = 0;
 

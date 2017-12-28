@@ -13,14 +13,13 @@ public class MethodArrayParsing {
 //    public static void main (String[]xxx) {
       public static void arrayParsing (String[]buffArrWorkDay, String[]buffArrWeekEnd) {
 
-        System.out.println("start parcing array with requests");
+        System.out.println("start parsing array with requests");
 
         int regexDateCount = 0;
         int regexReqCount = 0;
-        int count=0;
 
 
-        String[]arrWorkDay = new String[buffArrWorkDay.length];
+        //String[]arrWorkDay = new String[buffArrWorkDay.length];
         String responsible = "";
 
 //подготавливаем список ответственных делавших заявки, делает из него массив, сортирует по алфавиту:
@@ -61,17 +60,17 @@ public class MethodArrayParsing {
             requestsAndResponsible += responsibleArr[i] + "\n";
 
      //заявки рабочих дней
-           for (int j = 0; j < buffArrWorkDay.length; j++) {
+            for (int j = 0; j < buffArrWorkDay.length; j++) {
 
                if (buffArrWorkDay[j].contains(responsibleArr[i]) ) {
                    requestsAndResponsible += buffArrWorkDay[j].substring(0,buffArrWorkDay[j].indexOf(":")) + "\n";
                }
-           }
+            }
 
      //заявки выходных дней
             for (int j = 0; j < buffArrWeekEnd.length; j++) {
 
-                if (buffArrWeekEnd[j].contains(responsibleArr[i]) ) {
+                if (buffArrWeekEnd[j].contains(responsibleArr[i]) && responsibleArr[i].contains("MM")) {
                     requestsAndResponsible += buffArrWeekEnd[j].substring(0,buffArrWeekEnd[j].indexOf(":")) + "\n";
                 }
             }
