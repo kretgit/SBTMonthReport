@@ -20,7 +20,7 @@ public class FromArrToTxt {
             System.out.println(ex.getMessage());
         }
 
-        System.out.println(pathToTXTFile);
+        System.out.println("Get your file at: " + pathToTXTFile);
 
     }
 

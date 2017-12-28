@@ -1,10 +1,11 @@
 public class MainRep {
 
 
-    static String pathToXLSFile = "//Users//mackret//Downloads/13_выполнено.xlsx";
-    //      "C://Users//SBT-Kretov-AA//Downloads/11_выполнено.xlsx"
+    static String pathToXLSFile =
+//            "//Users//mackret//Downloads/13_выполнено.xlsx";
+          "C://Users//SBT-Kretov-AA//Downloads/11_Выполнено.xlsx";
 
-    static String[] weekEndDays = {"03", "05", "07"};
+    static String[] weekEndDays = {"04","05","11","12","18","19","25","26"};
 
     static int sheetNumber = 0;
 
@@ -15,10 +16,10 @@ public class MainRep {
 
 //        TestDateFormat.testDateFormat(pathToXLSFile);
 
-//        FromXLSXToArr.gotFromExcel(pathToXLSFile, weekEndDays);
+        FromXLSXToArr.gotFromExcel(pathToXLSFile, weekEndDays);
 
-//        MethodArrayParsing.arrayParsing(FromXLSXToArr.buffArrWorkDay,FromXLSXToArr.buffArrWeekEnd);
-//        FromArrToTxt.fileWriter(MethodArrayParsing.requestsAndResponsible);
+        MethodArrayParsing.arrayParsing(FromXLSXToArr.arrWorkDay,FromXLSXToArr.arrWeekEnd);
+        FromArrToTxt.fileWriter(MethodArrayParsing.requestsAndResponsible);
 
 
 
