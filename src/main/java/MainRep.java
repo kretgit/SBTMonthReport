@@ -17,9 +17,7 @@ public class MainRep {
 
 //        FromXLSXToArr.gotFromExcel(pathToXLSFile, weekEndDays);
 
-//        FromArrToTxt.fileWriter(MethodArrayParsing.requestsAndResponsible);
-
-//        MethodArrayParsing.arrayParsing();
+//        MethodArrayParsing.arrayParsing(FromXLSXToArr.buffArrWorkDay,FromXLSXToArr.buffArrWeekEnd);
 //        FromArrToTxt.fileWriter(MethodArrayParsing.requestsAndResponsible);
 
 

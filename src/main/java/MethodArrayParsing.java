@@ -11,11 +11,12 @@ public class MethodArrayParsing {
     static String requestsAndResponsible = "";
 
     public static void main (String[]xxx) {
-    //public static void arrayParsing () {
+    //public static void arrayParsing (String[]buffArrWorkDay, String[]buffArrWeekEnd) {
 
         int regexDateCount = 0;
         int regexReqCount = 0;
         int count=0;
+
 
         String[]arrWorkDay = new String[buffArrWorkDay.length];
         String responsible = "";
@@ -33,7 +34,20 @@ public class MethodArrayParsing {
                         } else {
                             responsible += buffArrWorkDay[i].substring(regexReqCount + 1) + ";";
                         }
+
             }
+
+//то же самое только для массива с выходными работниками, дата не обрезается:
+            for (int i = 0; i < buffArrWeekEnd.length; i++) {
+
+                regexReqCount = buffArrWeekEnd[i].indexOf(":");
+                        if (responsible.contains(buffArrWeekEnd[i].substring(regexReqCount + 1)) ) {
+                            continue;
+                        } else {
+                            responsible += buffArrWeekEnd[i].substring(regexReqCount + 1) + ";";
+                        }
+
+        }
                     //System.out.println(responsible);
                     String[]responsibleArr = responsible.split(";");
                     Arrays.sort(responsibleArr);
@@ -44,20 +58,28 @@ public class MethodArrayParsing {
 
             requestsAndResponsible += responsibleArr[i] + "\n";
 
+     //заявки рабочих дней
            for (int j = 0; j < buffArrWorkDay.length; j++) {
-
 
                if (buffArrWorkDay[j].contains(responsibleArr[i]) ) {
                    requestsAndResponsible += buffArrWorkDay[j].substring(0,buffArrWorkDay[j].indexOf(":")) + "\n";
                }
-
            }
+
+     //заявки выходных дней
+            for (int j = 0; j < buffArrWeekEnd.length; j++) {
+
+                if (buffArrWeekEnd[j].contains(responsibleArr[i]) ) {
+                    requestsAndResponsible += buffArrWeekEnd[j].substring(0,buffArrWeekEnd[j].indexOf(":")) + "\n";
+                }
+            }
+
             requestsAndResponsible +="\n";
         }
 
 
 System.out.println(requestsAndResponsible);
-
+System.out.println("parsing complete");
 
 
 

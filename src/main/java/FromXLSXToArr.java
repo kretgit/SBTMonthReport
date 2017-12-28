@@ -15,6 +15,9 @@ public class FromXLSXToArr {
     static int totalRowCount = 0;
     static String buffStr;
 
+    static String[] buffArrWorkDay;
+    static String[] buffArrWeekEnd;
+
 
     static void gotFromExcel(String pathToFile, String[] weekEndArr) {
 
@@ -76,8 +79,8 @@ public class FromXLSXToArr {
 
         //string into array. Array devides for weekends and working days
         String[] buffArr = buffStr.split(";");
-        String[] buffArrWorkDay = new String[buffArr.length];
-        String[] buffArrWeekEnd = new String[buffArr.length];
+        buffArrWorkDay = new String[buffArr.length];
+        buffArrWeekEnd = new String[buffArr.length];
 
         for (int i = 0; i < buffArr.length; i++) {
 
@@ -91,8 +94,8 @@ public class FromXLSXToArr {
 
             buffArrWorkDay[i] = buffArr[i];
 
-            //System.out.println(buffArrWeekEnd[i]);
-            System.out.println(buffArrWorkDay[i]);
+            System.out.println(buffArrWeekEnd[i]);
+            //System.out.println(buffArrWorkDay[i]);
         }
 
 
