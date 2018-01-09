@@ -23,23 +23,26 @@ public class MethodArrayParsing {
         String responsible = "";
 
 //подготавливаем список ответственных делавших заявки, делает из него массив, сортирует по алфавиту:
-            for (int i = 0; i < buffArrWorkDay.length; i++) {
-                regexDateCount = buffArrWorkDay[i].indexOf("_");
-                buffArrWorkDay[i] = buffArrWorkDay[i].substring(0,regexDateCount); //without "_03MM"
+    try {
+        for (int i = 0; i < buffArrWorkDay.length; i++) {
+            regexDateCount = buffArrWorkDay[i].indexOf("_");
+            buffArrWorkDay[i] = buffArrWorkDay[i].substring(0, regexDateCount); //without "_03MM"
 
-                //buffArrWorkDay[i] = buffArrWorkDay[i].substring(regexReqCount+1); //Клепиков А.В.
-                //buffArrWorkDay[i] = buffArrWorkDay[i].substring(0,regexReqCount); //ЗНО11463573
-                regexReqCount = buffArrWorkDay[i].indexOf(":");
-                        if (responsible.contains(buffArrWorkDay[i].substring(regexReqCount + 1)) ) {
-                            continue;
-                        } else {
-                            responsible += buffArrWorkDay[i].substring(regexReqCount + 1) + ";";
-                        }
-
+            //buffArrWorkDay[i] = buffArrWorkDay[i].substring(regexReqCount+1); //Клепиков А.В.
+            //buffArrWorkDay[i] = buffArrWorkDay[i].substring(0,regexReqCount); //ЗНО11463573
+            regexReqCount = buffArrWorkDay[i].indexOf(":");
+            if (responsible.contains(buffArrWorkDay[i].substring(regexReqCount + 1))) {
+                continue;
+            } else {
+                responsible += buffArrWorkDay[i].substring(regexReqCount + 1) + ";";
             }
 
+        }
+    } catch (Exception ex) {
+        System.out.println("there are no working days in file");
+    }
 //то же самое только для массива с выходными работниками, дата не обрезается:
-            for (int i = 0; i < buffArrWeekEnd.length; i++) {
+        for (int i = 0; i < buffArrWeekEnd.length; i++) {
 
                 regexReqCount = buffArrWeekEnd[i].indexOf(":");
                         if (responsible.contains(buffArrWeekEnd[i].substring(regexReqCount + 1)) ) {

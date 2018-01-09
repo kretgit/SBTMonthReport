@@ -75,8 +75,8 @@ System.out.println("Starting read xlxs on: " + pathToFile);
         }
 
 
-        //string into array. Array devides for weekends and working days
-        String[] buffArr = buffStr.split(";");
+//string into array. Array devides for weekends and working days
+        String[]buffArr = buffStr.split(";");
         String[]buffArrWorkDay = new String[buffArr.length];
         String[]buffArrWeekEnd = new String[buffArr.length];
 
