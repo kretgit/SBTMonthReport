@@ -13,7 +13,7 @@ public class FromXLSXToArr {
 
 
     static int totalRowCount = 0;
-    static String buffStr;
+    static String buffStr = "";
 
     static String[] arrWorkDay;
     static String[] arrWeekEnd;
@@ -73,7 +73,6 @@ System.out.println("Starting read xlxs on: " + pathToFile);
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-
 
 //string into array. Array devides for weekends and working days
         String[]buffArr = buffStr.split(";");

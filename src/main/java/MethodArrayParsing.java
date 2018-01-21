@@ -10,6 +10,7 @@ public class MethodArrayParsing {
 //    static String[]buffArrWeekEnd = {"IM32362032:Новиков А.М._03MM","IM32375263:Бондарева Е.Д._03MM","ЗНО11310770:Новиков А.М._03MM","ЗНО11316786:Клепиков А.В._03MM","ЗНО11356676:Клепиков А.В._03MM","IM32373518:Пашкова Л.С._03MM","IM32377709:Борисова Т.В._03MM","ЗНО11076755:Клепиков А.В._03MM","ЗНО11376127:Пашкова Л.С._03MM","ЗНО11302515:Пузырин П.В._03MM","IM32419208:Пашкова Л.С._03MM","ЗНО11155360:Борисова Т.В._03MM","ЗНО11033861:Жиленко П.В._03MM","IM32421308:Пашкова Л.С._03MM","IM32386689:Ветошкин А.М._03MM","ЗНО11180699:Мамонова Е.А._03MM","IM32406073:Борисова Т.В._03MM","ЗНО10767557:Пузырин П.В._03MM","ЗНО11330507:Клепиков А.В._05MM","ЗНО11374285:Клепиков А.В._05MM","IM32435301:Клепиков А.В._05MM","IM32391397:Клепиков А.В._05MM","IM32447407:Клепиков А.В._05MM","ЗНО11010294:Клепиков А.В._05MM","IM32514325:Захариков В.В._05MM","IM32428589:Клепиков А.В._05MM","ЗНО11381631:Клепиков А.В._05MM","ЗНО11312898:Клепиков А.В._05MM","ЗНО11357816:Клепиков А.В._05MM","ЗНО10905406:Клепиков А.В._05MM","IM32466581:Новиков А.М._05MM"};
     static String requestsAndResponsible = "";
 
+
 //    public static void main (String[]xxx) {
       public static void arrayParsing (String[]buffArrWorkDay, String[]buffArrWeekEnd) {
 
@@ -62,6 +63,7 @@ public class MethodArrayParsing {
 
             requestsAndResponsible += responsibleArr[i] + "\n";
 
+
      //заявки рабочих дней
             for (int j = 0; j < buffArrWorkDay.length; j++) {
 
@@ -85,6 +87,19 @@ public class MethodArrayParsing {
 //System.out.println(requestsAndResponsible);
 System.out.println("parsing complete");
 
+
+
+//блок для передачи в строку выходных заявок из массива
+        try {
+            int indexReq = 0;
+            for (String i : buffArrWeekEnd) {
+                indexReq = i.indexOf(":");
+                WeekEndAlarmCount.strCountForWeekEndAlarm += i.substring(indexReq + 1) + "\n";
+            }
+            //System.out.println(WeekEndAlarmCount.strCountForWeekEndAlarm);
+        } catch (Exception ex) {
+            System.out.println("Sorry, can't update WeekEnd Alarm notification");
+        }
 
 
     } //end of method
