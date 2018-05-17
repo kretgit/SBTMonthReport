@@ -11,7 +11,7 @@ import java.util.Iterator;
 
 public class TestDateFormat {
 
-    static String buffStr;
+    static String buffStr = "";
 
 
     static void testDateFormat(String pathToFile) {

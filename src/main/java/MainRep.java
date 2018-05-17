@@ -1,11 +1,11 @@
 public class MainRep {
 
 
-    static String pathToXLSFile =
-            "//Users//mackret//Downloads/12_Выполнено.xlsx"; // for mac
-//          "C://Users//SBT-Kretov-AA//Downloads/01_Выполнено.xlsx"; //for win
+    static String pathToXLSFile = System.getProperty("user.home") + "//Downloads/" + "04_выполнено.xlsx";
+            //"//Users//mackret//Downloads/12_Выполнено.xlsx"; // for mac
+          //"C://Users//SBT-Kretov-AA//Downloads/04_выполнено.xlsx"; //for win
 
-    static String[] weekEndDays = {"02","03","09","10","16","17","23","24","30","31"}; //dec
+    static String[] weekEndDays = {"01","07","08","14","15","21","22","29","30"}; //apr
 
 
 
@@ -13,13 +13,13 @@ public class MainRep {
 
     public static void main(String[]args) {
 
+//
+        TestDateFormat.testDateFormat(pathToXLSFile); //should be like: "Sat Dec 30 10:56:28 MSK 2017"
 
-//        TestDateFormat.testDateFormat(pathToXLSFile); //should be like: "Sat Dec 30 10:56:28 MSK 2017"
-
-        FromXLSXToArr.gotFromExcel(pathToXLSFile, weekEndDays);
-        MethodArrayParsing.arrayParsing(FromXLSXToArr.arrWorkDay,FromXLSXToArr.arrWeekEnd);
-        FromArrToTxt.fileWriter(MethodArrayParsing.requestsAndResponsible);
-        WeekEndAlarmCount.countWeekEndAlarm();
+//        FromXLSXToArr.gotFromExcel(pathToXLSFile, weekEndDays);
+//        MethodArrayParsing.arrayParsing(FromXLSXToArr.arrWorkDay,FromXLSXToArr.arrWeekEnd);
+//        FromArrToTxt.fileWriter(MethodArrayParsing.requestsAndResponsible);
+//        WeekEndAlarmCount.countWeekEndAlarm();
 
 
     }
